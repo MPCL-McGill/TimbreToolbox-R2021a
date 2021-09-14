@@ -1,0 +1,23 @@
+function obj = spectralCrest(obj)
+%==========================================================================
+% Computes the spectral crest. 
+
+% OBJ: cERBrep
+
+% CALLED BY: do_ERBrep.m
+                
+% MEMBER OF: cErbDescs.m 
+%==========================================================================
+
+% Peeters formulation:
+% scm = max(obj.RepValues,[],1) ./ (mean(obj.RepValues, 1));
+
+% Or use the sum instead: restrict values in the range: 2/nBins to 1:
+scm = max(obj.RepValues,[],1) ./ (sum(obj.RepValues, 1));
+
+% Replace NaNs with zeros (silent frames).
+scm( sum(obj.RepValues,1) == 0) = 0;
+
+% Transpose for Table format
+obj.SpectralCrest =  scm.';
+end
