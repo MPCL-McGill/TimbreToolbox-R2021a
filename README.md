@@ -10,7 +10,7 @@ Since then, it has undergone many revisions, and many computations of the descri
 
 ## Compatibility with MATLAB versions
 
-R2020a, R2021a
+R2020a, R2020b, R2021a
 
 Older MATLAB versions have not been tested. 
 
